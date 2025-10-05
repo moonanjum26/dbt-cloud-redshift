@@ -1,0 +1,18 @@
+version : 2
+
+sources:
+  - name: redshift_source
+    description: gets data from redshift staging layer
+    database: staging
+    schema: public
+    tables:
+      - name: employees
+
+models:
+  - name: employees
+    config: 
+       materialized: table
+       alias: employees_rpt
+
+
+
